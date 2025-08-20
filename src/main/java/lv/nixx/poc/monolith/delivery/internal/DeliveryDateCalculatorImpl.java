@@ -1,5 +1,6 @@
-package lv.nixx.poc.monolith.delivery;
+package lv.nixx.poc.monolith.delivery.internal;
 
+import lv.nixx.poc.monolith.delivery.api.DeliveryDateCalculator;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

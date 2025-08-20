@@ -1,4 +1,4 @@
-package lv.nixx.poc.monolith.delivery;
+package lv.nixx.poc.monolith.delivery.api;
 
 import java.time.LocalDateTime;
 

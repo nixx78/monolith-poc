@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 //TODO Реализовать пакет eventutils (не модуль)
-//TODO Реализовать пример api/internal
 //TODO Реализовать пример "неправильного" вызова для падения теста
 
 @SpringBootApplication

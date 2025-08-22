@@ -6,10 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-//TODO Реализовать пакет eventutils (не модуль)
-//TODO Реализовать пример "неправильного" вызова для падения теста
-
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "lv.nixx.poc")
 public class DemoApplication implements CommandLineRunner {
 
     private final OrderService orderService;

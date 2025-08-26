@@ -1,12 +1,13 @@
 package lv.nixx.poc.monolith.orders;
 
-import lv.nixx.poc.eventutils.EventUtilHelper;
+import lv.nixx.poc.event.EventUtilHelper;
 import lv.nixx.poc.monolith.delivery.api.DeliveryDateCalculator;
 import lv.nixx.poc.monolith.delivery.api.ShippingCostCalculator;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Service
 public class OrderService {
@@ -28,7 +29,7 @@ public class OrderService {
 
         System.out.println("Order created: " + orderId + ": expected delivery date time: " + deliveryDateTime + " : expected delivery cost: " + shippingCost);
 
-        eventUtilHelper.sendEvent(new OrderPlacedEvent(orderId, customerId, deliveryDateTime, shippingCost));
+        eventUtilHelper.sendEvent(new OrderPlacedAuditEvent(UUID.randomUUID().toString(), orderId, customerId, deliveryDateTime, shippingCost));
     }
 
 }

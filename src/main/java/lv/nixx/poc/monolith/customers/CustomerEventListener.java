@@ -1,6 +1,6 @@
 package lv.nixx.poc.monolith.customers;
 
-import lv.nixx.poc.monolith.orders.OrderPlacedEvent;
+import lv.nixx.poc.monolith.orders.OrderPlacedAuditEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +14,7 @@ public class CustomerEventListener {
     }
 
     @EventListener
-    public void handle(OrderPlacedEvent event) {
+    public void handle(OrderPlacedAuditEvent event) {
         customerService.updateCustomerAfterOrder(event.customerId());
     }
 }

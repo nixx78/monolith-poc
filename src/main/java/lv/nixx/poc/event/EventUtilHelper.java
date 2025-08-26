@@ -1,4 +1,4 @@
-package lv.nixx.poc.eventutils;
+package lv.nixx.poc.event;
 
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
@@ -12,8 +12,8 @@ public class EventUtilHelper {
         this.eventPublisher = eventPublisher;
     }
 
-    public void sendEvent(Object event) {
-
+    public void sendEvent(IdentifiableAuditEvent event) {
+        eventPublisher.publishEvent(event);
     }
 
 }

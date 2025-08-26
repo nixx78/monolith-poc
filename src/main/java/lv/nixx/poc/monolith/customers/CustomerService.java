@@ -1,7 +1,6 @@
 package lv.nixx.poc.monolith.customers;
 
-import lv.nixx.poc.eventutils.EventUtilHelper;
-import lv.nixx.poc.monolith.audit.AuditEvent;
+import lv.nixx.poc.event.EventUtilHelper;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -18,7 +17,7 @@ public class CustomerService {
     public void updateCustomerAfterOrder(Long customerId) {
         System.out.println("Update client data, customerId: " + customerId);
 
-        eventUtilHelper.sendEvent(new AuditEvent(UUID.randomUUID().toString(), "Customer data updated"));
+        eventUtilHelper.sendEvent(new CustomerAuditEvent(UUID.randomUUID().toString(), "Customer data updated"));
     }
 
 }
